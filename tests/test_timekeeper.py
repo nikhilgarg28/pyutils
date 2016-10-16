@@ -8,16 +8,16 @@ def test():
     @tk.time('f1')
     def f1():
         time.sleep(1)
-        return
+        return 1
 
     @tk.time('f2')
     def f2():
         time.sleep(2)
-        return
+        return 2
 
-    f1()
-    f2()
-    f2()
+    assert 1 == f1()
+    assert 2 == f2()
+    assert 2 == f2()
 
     profile = tk.profile()
 

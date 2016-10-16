@@ -13,6 +13,7 @@ class TimeKeeper(object):
                 ret = fn(*args, **kwargs)
                 end = time.time()
                 self._profile[name] += (end-start)
+                return ret
             return inner
         return decorator
 
