@@ -4,7 +4,7 @@ import time
 
 class TimeKeeper(object):
     def __init__(self):
-        self._profile = defaultdict(float)
+        self.reset()
 
     def time(self, name):
         def decorator(fn):
@@ -18,3 +18,6 @@ class TimeKeeper(object):
 
     def profile(self):
         return self._profile
+
+    def reset(self):
+        self._profile = defaultdict(float)
